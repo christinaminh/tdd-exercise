@@ -59,6 +59,8 @@ describe 'Blackjack Score' do
 
     # Arrange, Act, Assert
     expect( blackjack_score( [10, 10, 'Ace'] ) ).must_equal 21
+
+    expect( blackjack_score( ['Ace', 'Ace', 'Ace', 'Ace', 'Ace'] ) ).must_equal 15
   end
 
   it 'raises an ArgumentError for invalid cards' do
@@ -82,7 +84,7 @@ describe 'Blackjack Score' do
 
     expect{ blackjack_score(['Jack', 'Queen', 2]) }.must_raise ArgumentError
 
-    expect{ blackjack_score([10, 8, 'Ace', 'Ace', 'Ace', 'Ace']) }.must_raise ArgumentError
+    expect{ blackjack_score([10, 10, 'Ace', 'Ace', 'Ace']) }.must_raise ArgumentError
 
     expect{ blackjack_score([10, 'King', 'Ace', 'Ace']) }.must_raise ArgumentError
   end
