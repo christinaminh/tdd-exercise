@@ -14,7 +14,7 @@ def blackjack_score(hand)
 
   hand.each_with_index do |card, i|
     if !VALID_CARDS.include?(card)
-      raise ArgumentError, "Invalid card."
+      raise ArgumentError, "#{card} is not a valid card."
     end
     if face_cards.include?(card)
       hand[i] = 10
